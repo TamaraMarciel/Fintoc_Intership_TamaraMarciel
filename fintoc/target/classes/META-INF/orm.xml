@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm
+                                     https://jakarta.ee/xml/ns/persistence/orm/orm_3_0.xsd"
+                 version="3.0">
+
+    <named-query name="Product.findByCategoria">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c = :categoria ORDER BY p.nombre</query>
+    </named-query>
+
+    <named-query name="Product.findByCategoriaOrderByPrecioAsc">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c = :categoria ORDER BY p.precio ASC</query>
+    </named-query>
+
+    <named-query name="Product.findByCategoriaOrderByPrecioDesc">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c = :categoria ORDER BY p.precio DESC</query>
+    </named-query>
+
+    <named-query name="Product.findByCategoriaOrderByVentasDesc">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c = :categoria ORDER BY p.ventas DESC</query>
+    </named-query>
+
+    <named-query name="Product.findByCategorias">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c IN (:categorias) ORDER BY p.nombre</query>
+    </named-query>
+
+    <named-query name="Product.findByCategoriasOrderByPrecioAsc">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c IN (:categorias) ORDER BY p.precio ASC</query>
+    </named-query>
+
+    <named-query name="Product.findByCategoriasOrderByPrecioDesc">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c IN (:categorias) ORDER BY p.precio DESC</query>
+    </named-query>
+
+    <named-query name="Product.findByCategoriasOrderByVentasDesc">
+        <query>SELECT DISTINCT p FROM Product p JOIN p.categorias c WHERE c IN (:categorias) ORDER BY p.ventas DESC</query>
+    </named-query>
+
+    <named-query name="Product.findAllCategorias">
+        <query>SELECT DISTINCT c FROM Product p JOIN p.categorias c ORDER BY c</query>
+    </named-query>
+
+</entity-mappings>

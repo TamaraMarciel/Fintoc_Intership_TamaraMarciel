@@ -1,4 +1,4 @@
-package com.Fintoc.Fintoc;
+package com.fintoc.fintoc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
